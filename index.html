@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zaazshoot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <style>
+    
+    /* diterapkan pada semua elemen, penghitungan ukuran elemen 
+    akan lebih intuitif dan memudahkan dalam mengatur tata letak halaman. */
+    * {
+        box-sizing: border-box;
+    }
+    /* Mengatur jenis font yang akan digunakan untuk teks di dalam elemen body */
+    body {
+        
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+    }
+    
+        
+    /* Gaya Header*/
+    header {
+        
+        background-color: #333;  /* warna header*/
+        color: #fff; /*Warna Fornt*/
+        padding: 20px;
+        text-align: center;
+        animation: fadeIn 1s forwards; /* Animasi untuk memudarkan tampilan header */
+    }
+    
+    
+    header img {
+        
+        width: 150px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    h1 {
+        margin: 0;
+        font-size: 36px;
+    }
+    
+    p.description {
+        font-size: 16px;
+        margin-top: 10px;
+        color: #ccc;
+        opacity: 0;
+        animation: fadeIn 1s 0.5s forwards; /* Animasi untuk memudarkan deskripsi */
+    }
+    
+    .social-icons {
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeIn 1s 1s forwards; /* Animasi untuk memudarkan ikon sosial media */
+    }
+    
+    .social-icons a {
+        color: #fff;
+        margin: 0 5px;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+        color: #ff0000;
+    }
+    
+    /* Gaya Navigasi */
+    
+    nav {
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+        color: #ffd700;
+    }
+    
+    /* Gaya Bagian */
+    section {
+        padding: 40px;
+        text-align: center;
+    }
+    
+    /* Animasi untuk memudarkan judul bagian */
+    h2 {
+        margin: 0;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: fadeIn 1s 1.5s forwards; 
+    }
+
+    /* Animasi untuk memudarkan teks bagian */
+    p.animated-text {
+        line-height: 1.6;
+        color: #555;
+        opacity: 0;
+        animation: fadeIn 1s 2s forwards; 
+    }
+    
+    /* Gaya Footer */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    footer p {
+        margin: 0;
+    }
+    
+    /* Animasi */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    /* Gaya Responsif */
+    @media only screen and (max-width: 768px) {
+        h1 {
+            font-size: 24px;
+        }
+    
+        nav a {
+            font-size: 16px;
+        }
+    
+        h2 {
+            font-size: 20px;
+        }
+    
+        p {
+            font-size: 14px;
+        }
+    
+    /* Gaya Responsif Header */
+    header {
+        padding: 10px;
+    }
+    
+    header img {
+        width: 100px;
+        margin-bottom: 5px;
+            }
+    
+    p.description {
+        font-size: 14px;
+    }
+    
+    /* Gaya Responsif Navigasi */
+    nav {
+        padding: 5px;
+    }
+    
+    nav a {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+    
+    /* Gaya Responsif Bagian */
+    section {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    p.animated-text {
+        font-size: 14px;
+    }
+    
+    /* Gaya Responsif Footer */
+    footer {
+        padding: 10px;
+    }
+    
+    footer p {
+        font-size: 12px;
+    }
+    }
+        
+    /* Gaya Responsif untuk Gambar */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Animasi tambahan saat tautan dihover */
+    nav a {
+        position: relative;
+        display: inline-block;
+        transition: all 0.3s ease;
+        }
+    
+    nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #000;
+        transition: all 0.3s ease;
+    }
+    
+    nav a:hover::after {
+        width: 100%;
+    }
+
+    #videografi {
+        display: flex;
+        justify-content: center;
+    }
+
+    #videografi > div {
+        width: 90%;
+    }
+
+    #fotografi {
+        display: flex;
+        justify-content: center;
+    }
+
+    #fotografi > div {
+        width: 90%;
+    }
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* Rasio 16:9 (contoh rasio aspek) */
+    }
+
+    
+
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+    }
+    /* kode dibawah agar tulisan videografi, fotografi, dan kontak saat di scroll mengikuti*/
+    nav {
+        position: sticky;
+        top: 0;
+             background-color: #9b9b9b6a;
+        padding: 10px;
+        z-index: 999;
+    }
+        
+    .nav-container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #09b500;
+    }
+
+    /* Membuat ukuran gambar pada slide mengikuti container */
+    .splide__slide img {
+        width: 100%;
+        height: auto;
+    }
+    /* membuat font zaazshoot pada judul diatas berubah jadi */
+    @font-face {
+        font-family: 'Zaazshoot';
+        src: url(path/to/zaazshoot-font.woff2) format('a'),
+             url(path/to/zaazshoot-font.woff) format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    .zaazshoot {
+        font-family: 'equalize', sans-serif;
+        font-size: 24px;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .judulkonten {
+        font-family: 'AGRESSIVE';
+        font-size: 20px;
+        color: #4b4b4b;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    </style>
+    <script>
+        // Ketika elemen html dimuat pada browser maka kode di dalam fungsi akan dijalankan 
+        document.addEventListener( 'DOMContentLoaded', function () {
+          new Splide( '#image-carousel' ).mount(); // Inisialisasi atau membuat elemen carousel slide
+        } );
+    </script>
+</head>
+<body>
+    <header>
+        <img src="zaazshootprofile.png" alt="Zaazshoot">
+        <h1 class="zaazshoot">Zaazshoot</h1>
+        <p class="description"><span style="display: block;">Best Moment For You</span>sosial media kami</p>
+
+        <div class="social-icons">
+            <a href="https://instagram.com/zaazshoot?igshid=ZDc4ODBmNjlmNQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@elfredaizaaz?_t=8dJzTVrYd17&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/channel/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="zaazshoot@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="videografi.html">Videografi</a>
+            <a href="fotografi.html">Fotografi</a>
+            <a href="kontak.html">Kontak</a>
+        </div>
+    </nav>
+      
+    <section id="videografi">
+        <div>
+            <h2 class="judulkonten">About Us</h2>
+            <div class="video-container">
+                <video src="logo promosi zaazshoot.mp4" autoplay loop muted></video>
+            </div>
+            <p class="animated-text">Zaazshoot adalah jasa konten kreatif dalam bida videografi dan fotografi, yang berdiri pada 18 juli 2021, zaazshoot </p>
+            <P class="animated-text">Berikut adalah beberapa hal yang ditawarkan oleh bisnis kami:</p>
+            <p class="animated-text">Keunggulan bisnis kami adalah kualitas profesional yang kami tawarkan. Kami mengutamakan kepuasan pelanggan dengan memberikan layanan berkualitas tinggi dan menghasilkan video yang memenuhi harapan. Tim kami memiliki pengalaman dan keahlian yang solid dalam videografi, dan kami selalu berupaya memberikan hasil terbaik yang akan membuat momen Anda menjadi abadi.</p>
+            <p class="animated-text">Kami berharap dapat berkolaborasi dengan Anda dalam proyek videografi Anda selanjutnya dan menciptakan hasil yang memukau. Hubungi kami sekarang untuk informasi lebih lanjut dan konsultasi gratis. Terima kasih telah mempertimbangkan layanan jasa videografer kami!</p>
+            
+            <div class="video-container">
+                <video width="320" height="240" controls>
+                    <source src="promosi 1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+    
+    <section id="fotografi">
+        <div>
+            <h2>Fotografi</h2>
+            <div id="image-carousel" class="splide" aria-label="Beautiful Images">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img class="slide" src="dcstw.jpg" alt="Foto 1">
+                        </li>
+                        <li class="splide__slide">
+                            <img class="slide" src="dcspantai.JPG" alt="Foto 2">
+                        </li>
+                        <li class="splide__slide">
+                            <img class="slide" src="kemu.JPG" alt="Foto 3">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="animated-text">Kami adalah tim profesional yang menyediakan jasa fotografi untuk berbagai keperluan. Berikut adalah beberapa hal yang ditawarkan oleh bisnis kami:</p>
+            <p class="animated-text">Keunggulan bisnis kami terletak pada perpaduan antara keahlian fotografi kami, komitmen terhadap kualitas, dan layanan pelanggan yang baik. Kami percaya bahwa setiap momen memiliki nilai yang tak ternilai, dan kami berkomitmen untuk mengabadikannya dengan keindahan dan keaslian yang sempurna.</p>
+            <p class="animated-text">Kami berharap dapat bekerja sama dengan Anda dalam proyek fotografi Anda selanjutnya. Hubungi kami sekarang untuk informasi lebih lanjut dan jadwalkan sesi pemotretan bersama kami. Terima kasih telah memilih layanan jasa fotografi kami!</p>
+        </div>
+    </section>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>JASA</td>
+
+                <td>KEGIATAN</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fotografi</td>
+                <td>organisasi</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>Videografi</td>
+            </tr>
+        </tbody>
+    </table>
+    <section id="kontak">
+        <h2>Kontak</h2>
+        <p class="animated-text">Untuk informasi lebih lanjut atau untuk memesan layanan kami, silakan hubungi kami melalui:
+        <ul>
+            Telepon: <a href="tel:08973498332">08973498332</a></li>
+            Email: <a href="mailto:zaazshoot@gmail.com">zaazshoot@gmail.com</a></li>
+            Alamat: Surakarta dan Salatiga <a href="https://maps.google.com/maps?q=Surakarta">Surakarta</a> dan <a href="https://maps.google.com/maps?q=Salatiga">Salatiga</a></li>
+        </p>
+        
+        <p class="animated-text">Kami siap menjawab pertanyaan Anda dan membantu Anda menciptakan momen yang berharga. Terima kasih atas minat dan kepercayaan Anda kepada Zaazshoot!</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Zaazshoot. All rights reserved. | Design by Zaazshoot</p>
+    </footer>
+
+
+</body>
+</html>
